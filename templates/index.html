@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clock</title>
+    <title>Live Clock</title>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            document.getElementById("clock").innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        window.onload = updateClock;
+    </script>
 </head>
 <body>
-    <h1>Current Time</h1>
-    <h2>{{ current_time }}</h2>
+    <h1>Live Clock</h1>
+    <h2 id="clock"></h2>
 </body>
 </html>
